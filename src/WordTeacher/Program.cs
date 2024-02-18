@@ -10,7 +10,7 @@ var height = Console.WindowHeight;
 ConsoleUI.WriteLine($"{width} {height}", ConsoleAlign.Center);
 
 var collection = ReadFile(Path.Combine(Environment.CurrentDirectory, "dane.txt"));
-var round = new Round(collection);
+var round = new Lesson(collection);
 
 Entry? current;
 while ((current = round.GetNext()) != null)

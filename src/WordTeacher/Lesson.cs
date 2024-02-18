@@ -1,7 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-
-internal class Round(Collection collection)
+﻿
+internal class Lesson(Collection collection)
 {
     private Random _random = new();
     private Dictionary<Entry, bool> _answers = new();
@@ -33,5 +31,14 @@ internal class Round(Collection collection)
         var percentage = ((double)good / collection.Entries.Length) * 100;
 
         return (good, (int)percentage);
+    }
+
+    private List<Entry> Shufle(IEnumerable<Entry> collection)
+    {
+        var result = new List<Entry>();
+        foreach (var entry in collection)
+            result.Insert(_random.Next(result.Count + 1), entry);
+
+        return result;
     }
 }
